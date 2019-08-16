@@ -76,227 +76,227 @@ static const fluid_cmd_t fluid_commands[] =
 {
     /* general commands */
     {
-        "help", "general", fluid_handle_help,
-        "help                       Shows help topics ('help TOPIC' for more info)"
+        "帮助", "常规", fluid_handle_help,
+        "帮助                       Shows help topics ('help TOPIC' for more info)"
     },
     {
-        "quit", "general", fluid_handle_quit,
+        "quit", "常规", fluid_handle_quit,
         "quit                       Quit the synthesizer"
     },
     {
-        "source", "general", fluid_handle_source,
+        "source", "常规", fluid_handle_source,
         "source filename            Loads a file and parse every line as a command"
     },
     /* event commands */
     {
-        "noteon", "event", fluid_handle_noteon,
+        "noteon", "事件", fluid_handle_noteon,
         "noteon chan key vel        Sends noteon"
     },
     {
-        "noteoff", "event", fluid_handle_noteoff,
+        "noteoff", "事件", fluid_handle_noteoff,
         "noteoff chan key           Sends noteoff"
     },
     {
-        "pitch_bend", "event", fluid_handle_pitch_bend,
+        "pitch_bend", "事件", fluid_handle_pitch_bend,
         "pitch_bend chan offset     Bends pitch"
     },
     {
-        "pitch_bend_range", "event", fluid_handle_pitch_bend_range,
+        "pitch_bend_range", "事件", fluid_handle_pitch_bend_range,
         "pitch_bend_range chn range Sets pitch bend range for the given midi channel"
     },
     {
-        "cc", "event", fluid_handle_cc,
+        "cc", "事件", fluid_handle_cc,
         "cc chan ctrl value         Sends control-change message"
     },
     {
-        "prog", "event", fluid_handle_prog,
+        "prog", "事件", fluid_handle_prog,
         "prog chan num              Sends program-change message"
     },
     {
-        "select", "event", fluid_handle_select,
+        "select", "事件", fluid_handle_select,
         "select chan sfont bank prog  Combination of bank-select and program-change"
     },
     {
-        "load", "general", fluid_handle_load,
+        "load", "常规", fluid_handle_load,
         "load file [reset] [bankofs] Loads SoundFont (reset=0|1, def 1; bankofs=n, def 0)"
     },
     {
-        "unload", "general", fluid_handle_unload,
+        "unload", "常规", fluid_handle_unload,
         "unload id [reset]          Unloads SoundFont by ID (reset=0|1, default 1)"
     },
     {
-        "reload", "general", fluid_handle_reload,
+        "reload", "常规", fluid_handle_reload,
         "reload id                  Reload the SoundFont with the specified ID"
     },
     {
-        "fonts", "general", fluid_handle_fonts,
+        "fonts", "常规", fluid_handle_fonts,
         "fonts                      Display the list of loaded SoundFonts"
     },
     {
-        "inst", "general", fluid_handle_inst,
+        "inst", "常规", fluid_handle_inst,
         "inst font                  Print out the available instruments for the font"
     },
     {
-        "channels", "general", fluid_handle_channels,
+        "channels", "常规", fluid_handle_channels,
         "channels [-verbose]        Print out preset of all channels"
     },
     {
-        "interp", "general", fluid_handle_interp,
+        "interp", "常规", fluid_handle_interp,
         "interp num                 Choose interpolation method for all channels"
     },
     {
-        "interpc", "general", fluid_handle_interpc,
+        "interpc", "常规", fluid_handle_interpc,
         "interpc chan num           Choose interpolation method for one channel"
     },
     /* polymono commands */
     {
-        "basicchannels", "polymono", fluid_handle_basicchannels,
+        "basicchannels", "多声道", fluid_handle_basicchannels,
         "basicchannels                         Prints the list of basic channels"
     },
     {
-        "resetbasicchannels", "polymono", fluid_handle_resetbasicchannels,
+        "resetbasicchannels", "多声道", fluid_handle_resetbasicchannels,
         "resetbasicchannels [chan1 chan2..]    Resets all or some basic channels"
     },
     {
-        "setbasicchannels", "polymono", fluid_handle_setbasicchannels,
+        "setbasicchannels", "多声道", fluid_handle_setbasicchannels,
         "setbasicchannels [chan mode val...]   Sets default, adds basic channels"
     },
     {
-        "channelsmode", "polymono", fluid_handle_channelsmode,
+        "channelsmode", "多声道", fluid_handle_channelsmode,
         "channelsmode [chan1 chan2..]          Prints channels mode"
     },
     {
-        "legatomode", "polymono", fluid_handle_legatomode,
+        "legatomode", "多声道", fluid_handle_legatomode,
         "legatomode [chan1 chan2..]            Prints channels legato mode"
     },
     {
-        "setlegatomode", "polymono", fluid_handle_setlegatomode,
+        "setlegatomode", "多声道", fluid_handle_setlegatomode,
         "setlegatomode chan mode [chan mode..] Sets legato mode"
     },
     {
-        "portamentomode", "polymono", fluid_handle_portamentomode,
+        "portamentomode", "多声道", fluid_handle_portamentomode,
         "portamentomode [chan1 chan2..]        Prints channels portamento mode"
     },
     {
-        "setportamentomode", "polymono", fluid_handle_setportamentomode,
+        "setportamentomode", "多声道", fluid_handle_setportamentomode,
         "setportamentomode chan mode [chan mode..] Sets portamento mode"
     },
     {
-        "breathmode", "polymono", fluid_handle_breathmode,
+        "breathmode", "多声道", fluid_handle_breathmode,
         "breathmode [chan1 chan2..]            Prints channels breath mode"
     },
     {
-        "setbreathmode", "polymono", fluid_handle_setbreathmode,
+        "setbreathmode", "多声道", fluid_handle_setbreathmode,
         "setbreathmode chan poly(1/0) mono(1/0) breath_sync(1/0) [..] Sets breath mode"
     },
     /* reverb commands */
     {
-        "rev_preset", "reverb", fluid_handle_reverbpreset,
+        "rev_preset", "混响", fluid_handle_reverbpreset,
         "rev_preset num             Load preset num into the reverb unit"
     },
     {
-        "rev_setroomsize", "reverb", fluid_handle_reverbsetroomsize,
+        "rev_setroomsize", "混响", fluid_handle_reverbsetroomsize,
         "rev_setroomsize num        Change reverb room size"
     },
     {
-        "rev_setdamp", "reverb", fluid_handle_reverbsetdamp,
+        "rev_setdamp", "混响", fluid_handle_reverbsetdamp,
         "rev_setdamp num            Change reverb damping"
     },
     {
-        "rev_setwidth", "reverb", fluid_handle_reverbsetwidth,
+        "rev_setwidth", "混响", fluid_handle_reverbsetwidth,
         "rev_setwidth num           Change reverb width"
     },
     {
-        "rev_setlevel", "reverb", fluid_handle_reverbsetlevel,
+        "rev_setlevel", "混响", fluid_handle_reverbsetlevel,
         "rev_setlevel num           Change reverb level"
     },
     {
-        "reverb", "reverb", fluid_handle_reverb,
+        "reverb", "混响", fluid_handle_reverb,
         "reverb [0|1|on|off]        Turn the reverb on or off"
     },
     /* chorus commands */
     {
-        "cho_set_nr", "chorus", fluid_handle_chorusnr,
+        "cho_set_nr", "合唱", fluid_handle_chorusnr,
         "cho_set_nr n               Use n delay lines (default 3)"
     },
     {
-        "cho_set_level", "chorus", fluid_handle_choruslevel,
+        "cho_set_level", "合唱", fluid_handle_choruslevel,
         "cho_set_level num          Set output level of each chorus line to num"
     },
     {
-        "cho_set_speed", "chorus", fluid_handle_chorusspeed,
+        "cho_set_speed", "合唱", fluid_handle_chorusspeed,
         "cho_set_speed num          Set mod speed of chorus to num (Hz)"
     },
     {
-        "cho_set_depth", "chorus", fluid_handle_chorusdepth,
+        "cho_set_depth", "合唱", fluid_handle_chorusdepth,
         "cho_set_depth num          Set chorus modulation depth to num (ms)"
     },
     {
-        "chorus", "chorus", fluid_handle_chorus,
+        "chorus", "合唱", fluid_handle_chorus,
         "chorus [0|1|on|off]        Turn the chorus on or off"
     },
     {
-        "gain", "general", fluid_handle_gain,
+        "gain", "常规", fluid_handle_gain,
         "gain value                 Set the master gain (0 < gain < 5)"
     },
     {
-        "voice_count", "general", fluid_handle_voice_count,
+        "voice_count", "常规", fluid_handle_voice_count,
         "voice_count                Get number of active synthesis voices"
     },
     /* tuning commands */
     {
-        "tuning", "tuning", fluid_handle_tuning,
+        "tuning", "调谐", fluid_handle_tuning,
         "tuning name bank prog      Create a tuning with name, bank number, \n"
         "                           and program number (0 <= bank,prog <= 127)"
     },
     {
-        "tune", "tuning", fluid_handle_tune,
+        "tune", "调谐", fluid_handle_tune,
         "tune bank prog key pitch   Tune a key"
     },
     {
-        "settuning", "tuning", fluid_handle_settuning,
+        "settuning", "调谐", fluid_handle_settuning,
         "settuning chan bank prog   Set the tuning for a MIDI channel"
     },
     {
-        "resettuning", "tuning", fluid_handle_resettuning,
+        "resettuning", "调谐", fluid_handle_resettuning,
         "resettuning chan           Restore the default tuning of a MIDI channel"
     },
     {
-        "tunings", "tuning", fluid_handle_tunings,
+        "tunings", "调谐", fluid_handle_tunings,
         "tunings                    Print the list of available tunings"
     },
     {
-        "dumptuning", "tuning", fluid_handle_dumptuning,
+        "dumptuning", "调谐", fluid_handle_dumptuning,
         "dumptuning bank prog       Print the pitch details of the tuning"
     },
     {
-        "reset", "general", fluid_handle_reset,
+        "reset", "常规", fluid_handle_reset,
         "reset                      System reset (all notes off, reset controllers)"
     },
     /* settings commands */
     {
-        "set", "settings", fluid_handle_set,
+        "set", "设置", fluid_handle_set,
         "set name value             Set the value of a setting (must be a real-time setting to take effect immediately)"
     },
     {
-        "get", "settings", fluid_handle_get,
+        "get", "设置", fluid_handle_get,
         "get name                   Get the value of a setting"
     },
     {
-        "info", "settings", fluid_handle_info,
+        "info", "设置", fluid_handle_info,
         "info name                  Get information about a setting"
     },
     {
-        "settings", "settings", fluid_handle_settings,
+        "settings", "设置", fluid_handle_settings,
         "settings                   Print out all settings"
     },
     {
-        "echo", "general", fluid_handle_echo,
+        "echo", "设置", fluid_handle_echo,
         "echo arg                   Print arg"
     },
     /* Sleep command, useful to insert a delay between commands */
     {
-        "sleep", "general", fluid_handle_sleep,
+        "sleep", "常规", fluid_handle_sleep,
         "sleep  duration            sleep duration (in ms)"
     },
     /* LADSPA-related commands */
